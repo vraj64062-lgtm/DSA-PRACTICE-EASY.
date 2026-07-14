@@ -19,6 +19,7 @@
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/vraj64062-lgtm/DSA-PRACTICE-EASY./tree/master/0002-add-two-numbers) |
+| [0007-reverse-integer](https://github.com/vraj64062-lgtm/DSA-PRACTICE-EASY./tree/master/0007-reverse-integer) |
 ## Recursion
 |  |
 | ------- |
