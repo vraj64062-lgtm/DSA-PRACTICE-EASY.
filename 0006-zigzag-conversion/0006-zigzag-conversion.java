@@ -5,32 +5,24 @@ class Solution {
             return s;
         }
 
-        StringBuilder[] rows = new StringBuilder[numRows];
+        StringBuilder ans = new StringBuilder();
+        int cycle = 2 * numRows - 2;
 
-        for (int i = 0; i < numRows; i++) {
-            rows[i] = new StringBuilder();
-        }
+        for (int row = 0; row < numRows; row++) {
 
-        int currentRow = 0;
-        boolean goingDown = false;
+            for (int j = row; j < s.length(); j += cycle) {
 
-        for (char c : s.toCharArray()) {
+                ans.append(s.charAt(j));
 
-            rows[currentRow].append(c);
+                int second = j + cycle - 2 * row;
 
-            if (currentRow == 0 || currentRow == numRows - 1) {
-                goingDown = !goingDown;
+                if (row != 0 && row != numRows - 1 &&
+                        second < s.length()) {
+                    ans.append(s.charAt(second));
+                }
             }
-
-            currentRow += goingDown ? 1 : -1;
         }
 
-        StringBuilder result = new StringBuilder();
-
-        for (StringBuilder row : rows) {
-            result.append(row);
-        }
-
-        return result.toString();
+        return ans.toString();
     }
 }
